@@ -1,12 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NASA_APOD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/150d0e46e5.js" crossorigin="anonymous"></script>
+    <script defer src="js/script.js"></script>
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">
+          NASA
+        </h1>
+        <p class="subtitle">
+          ¡Consulta la imagen astronómica del día! 
+        </p>
+      </div>
+    <nav class="level">
+      <div class="level-left">
+        <div class="tabs is-centered">
+          <ul>
+            <li class="is-active">
+              <a>
+                <span class="icon is-small"><i class="fas fa-image" aria-hidden="true"></i></span>
+                <span>Imágenes</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small"><i class="fas fa-film" aria-hidden="true"></i></span>
+                <span>Videos</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <span class="icon is-small">
+                  <i class="fa-solid fa-photo-film"></i>
+                </span>
+                <span>Todos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="level-item has-text-centered">
+        <img src="https://logodownload.org/wp-content/uploads/2019/03/nasa-logo-3.png" alt="" style="height: 100px;">
+      </p>
+      <div class="level-right">
+        <div class="field has-addons">
+          <p class="control">
+            <input class="input" type="text" placeholder="Busca algo.." id="searchTerm">
+          </p>
+          <p class="control">
+            <button class="button" id="search">
+              Buscar
+            </button>
+          </p>
+    </nav>
+        <div id="galeria" class="columns is-multiline">
+        </div>   
+      
+    </section>
+  </body>
 </html>
