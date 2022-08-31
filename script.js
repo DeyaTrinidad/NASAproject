@@ -80,12 +80,21 @@ new Vue({
 
 //Script del proyecto pasado Nancy
 //Método Sensei
+
 // fetch('https://images-api.nasa.gov/search?q=${busqueda}')
 // .then((response)=>response.json())
 // .then((data)=>{
 //     const resultados = (data);
 //     dibujar(data)
 // })
+
+fetch('https://api.nasa.gov/planetary/apod?api_key=u8Z3MZ6Hcmm1zGtZYe1h3pZ1aEH9gfa0qXhBsLol&date')
+.then((response)=>response.json())
+.then((data)=>{
+    resultados = (data);
+    dibujar(data)
+})
+
 
 
 // const buscar = (evt)=>{
@@ -98,6 +107,7 @@ new Vue({
 
 // const dibujar = (fichas) => {
     
+
 //     document.querySelector("#galeria").innerHTML="";
 //     fichas.forEach((ficha) => {
 //         let div = document.createElement("div");
@@ -168,3 +178,31 @@ function displayPictures(data) {
 fetch('https://api.nasa.gov/planetary/apod?api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDudZRyP5vSH4Nu')
   .then(res => res.json())
   .then(data => console.log(data));
+    document.querySelector("#galeria").innerHTML="";
+    fichas.forEach((ficha) => {
+        let div = document.createElement("div");
+        div.classList.add("column", "is-3");
+        div.innerHTML += `<div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="${personaje.href}" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                <p class="title is-4"><b>${personaje.title}</b></p>
+                                </div>
+                            </div>
+                        <div class="content">
+                            <p><b>${personaje.explanation}<b/></p>
+                            <a>@Nasa</a>
+                            <br>
+                            <time datetime="${personaje.date}"></time>
+                        </div>
+                        </div>
+                    </div> `
+        document.querySelector("#galeria").append(div);
+    });
+
+}  
