@@ -1,3 +1,4 @@
+/*
 :root {
   --color: #ffffff;
   --main-bg-color: #141412;
@@ -6,6 +7,7 @@
 html {
   background-color: var(--main-bg-color);
 /*   overflow-x: hidden; */
+/*
 }
 
 .search {
@@ -20,6 +22,7 @@ h1 {
   font-family: "Abel", sans-serif;
   padding-top: 8%;
 /*   margin-bottom: 1em; */
+/*
   text-align: center;
   overflow: auto;
 }
@@ -31,6 +34,7 @@ img {
   border-radius: 2%;
   
   /* box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.54); */
+/*
 }
 .grid {
   display: grid;
@@ -49,6 +53,7 @@ img {
   background-size: cover;
   background-position: 50% 50%;
   /* transform: rotate(-8deg); */
+  /*
   z-index: 1;
   -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.54);
   box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.54);
@@ -76,6 +81,7 @@ input {
   height: 2em;
   text-align: center;
   /* vertical-align: middle; */
+  /*
   background: none;
   resize: none;
   overflow: auto;
@@ -101,16 +107,17 @@ h4 {
   padding: 0 5% 0 5%
 }
 
+
 :root {
 	--clr-dark: #313131;
 	--clr-light: #D9D9D9;
 	--clr-light-blue: #689A92;
 }
-
+/*
 body {
 	background-color: var(--clr-dark);
 }
-
+*/
 .spinner {
 	--spinner-length: 300px;
 	position: relative;
@@ -180,3 +187,22 @@ body {
 		transform: translate(-50%, -50%) rotate(360deg);
 	}
 }
+
+*/
+
+/*ESTILOS DE BULMA Y CSS NANCY*/
+
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.image img{
+    object-fit: cover;
+}
+
+body {
+    height: 400px;
+    background-image: url("https://www.nasa.gov/sites/default/files/star_nova.png");
+  background-size: cover;
+    background-repeat:no-repeat;
+    background-position: center center;
+  }
+
