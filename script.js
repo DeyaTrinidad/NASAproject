@@ -76,7 +76,7 @@ new Vue({
 
 //Script del proyecto pasado Nancy
 //Método Sensei
-fetch('https://images-api.nasa.gov/search?q=${busqueda}')
+fetch('https://api.nasa.gov/planetary/apod?api_key=u8Z3MZ6Hcmm1zGtZYe1h3pZ1aEH9gfa0qXhBsLol&date')
 .then((response)=>response.json())
 .then((data)=>{
     resultados = (data);
@@ -111,10 +111,10 @@ const dibujar = (fichas) => {
                                 </div>
                             </div>
                         <div class="content">
-                            <p><b>${personaje.description}<b/></p>
+                            <p><b>${personaje.explanation}<b/></p>
                             <a>@Nasa</a>
                             <br>
-                            <time datetime="${personaje.date_created}"></time>
+                            <time datetime="${personaje.date}"></time>
                         </div>
                         </div>
                     </div> `
