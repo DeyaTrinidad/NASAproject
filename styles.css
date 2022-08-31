@@ -106,6 +106,88 @@ h4 {
   white-space: wrap;
   padding: 0 5% 0 5%
 }
+
+
+:root {
+	--clr-dark: #313131;
+	--clr-light: #D9D9D9;
+	--clr-light-blue: #689A92;
+}
+/*
+body {
+	background-color: var(--clr-dark);
+}
+*/
+.spinner {
+	--spinner-length: 300px;
+	position: relative;
+	width: var(--spinner-length);
+	height: var(--spinner-length);
+	border-radius: 50%;
+	border: 2px dashed var(--clr-light-blue);
+	animation: rotate-spinner 5000ms linear infinite;
+}
+
+.spinner-big-circle,
+.spinner-small-circles,
+.spinner-small-circles::before,
+.spinner-small-circles::after {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+}
+
+.spinner-big-circle {
+	--big-circle-radius: calc(var(--spinner-length) / 5);
+	width: var(--big-circle-radius);
+	height: var(--big-circle-radius);
+	background-color: var(--clr-light);
+}
+
+.spinner-small-circles {
+	--small-circle-radius: calc(var(--spinner-length) / 10);
+	left: 100%;
+	width: 64px;
+	height: 64px;
+	border: 2px dashed var(--clr-light-blue);
+	background-color: var(--clr-dark);
+	animation: rotate-spinner-small-circles 3600ms linear infinite;
+}
+
+.spinner-small-circles::before,
+.spinner-small-circles::after {
+	content: "";
+	width: var(--small-circle-radius);
+	height: var(--small-circle-radius);
+	background-color: var(--clr-light);
+}
+
+.spinner-small-circles::after {
+	left: 100%;
+}
+
+@keyframes rotate-spinner {
+	from {
+		transform: rotate(0);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate-spinner-small-circles {
+	from {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
 */
 
 /*ESTILOS DE BULMA Y CSS NANCY*/
@@ -123,3 +205,4 @@ body {
     background-repeat:no-repeat;
     background-position: center center;
   }
+
