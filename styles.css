@@ -188,7 +188,6 @@ body {
 	}
 }
 
-*/
 
 /*ESTILOS DE BULMA Y CSS NANCY*/
 
@@ -199,9 +198,10 @@ body {
 }
 
 body {
-    height: 400px;
-    background-image: url("https://www.nasa.gov/sites/default/files/star_nova.png");
-  background-size: cover;
+    color: aliceblue;
+    height: 200px;
+    background-image: url("https://www.wallpapertip.com/wmimgs/1-15799_8211-earth-from-space-space-wallpaper-4k-wallpaper.jpg");
+    background-size:cover;
     background-repeat:no-repeat;
     background-position: center center;
   }
