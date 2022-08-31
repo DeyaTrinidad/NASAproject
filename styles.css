@@ -108,16 +108,18 @@ h4 {
 }
 
 
-:root {
-	--clr-dark: #313131;
-	--clr-light: #D9D9D9;
-	--clr-light-blue: #689A92;
-}
 /*
 body {
-	background-color: var(--clr-dark);
+  background-color: var(--clr-dark);
 }
 */
+
+:root {
+  --clr-dark: #313131;
+  --clr-light: #D9D9D9;
+  --clr-light-blue: #689A92;
+}
+
 .spinner {
 	--spinner-length: 300px;
 	position: relative;
@@ -140,17 +142,17 @@ body {
 }
 
 .spinner-big-circle {
-	--big-circle-radius: calc(var(--spinner-length) / 5);
+	--big-circle-radius: calc(var(--spinner-length) / 4);
 	width: var(--big-circle-radius);
 	height: var(--big-circle-radius);
 	background-color: var(--clr-light);
 }
 
 .spinner-small-circles {
-	--small-circle-radius: calc(var(--spinner-length) / 10);
+	--small-circle-radius: calc(var(--spinner-length) / 8);
 	left: 100%;
-	width: 64px;
-	height: 64px;
+	width: calc(var(--small-circle-radius) * 3);
+	height: calc(var(--small-circle-radius) * 3);
 	border: 2px dashed var(--clr-light-blue);
 	background-color: var(--clr-dark);
 	animation: rotate-spinner-small-circles 3600ms linear infinite;
@@ -188,7 +190,6 @@ body {
 	}
 }
 
-
 /*ESTILOS DE BULMA Y CSS NANCY*/
 
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
@@ -198,6 +199,13 @@ body {
 }
 
 body {
+  height: 400px;
+  background-image: url("https://www.nasa.gov/sites/default/files/star_nova.png");
+  background-size: cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
     color: aliceblue;
     height: 200px;
     background-image: url("https://www.wallpapertip.com/wmimgs/1-15799_8211-earth-from-space-space-wallpaper-4k-wallpaper.jpg");
