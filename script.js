@@ -88,13 +88,15 @@ new Vue({
 //     dibujar(data)
 // })
 
+//FETCH 1
+/*
 fetch('https://api.nasa.gov/planetary/apod?api_key=u8Z3MZ6Hcmm1zGtZYe1h3pZ1aEH9gfa0qXhBsLol&date')
 .then((response)=>response.json())
 .then((data)=>{
     resultados = (data);
     dibujar(data)
 })
-
+*/
 
 
 // const buscar = (evt)=>{
@@ -138,16 +140,10 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=u8Z3MZ6Hcmm1zGtZYe1h3pZ1aEH9g
 // }
 
 
-const run = async () => {
-  const data = await fetch(`${BASE_URL}?${API_KEY}&start_date=2020-03-10&end_date=2022-08-30`);
-  const response = await data.json();
-  console.log(response);
-  displayPictures(response);
-}
 
 fetch(`${BASE_URL}?${API_KEY}`).then(data => data.json()).then(data => displayPictures(data))
 
-run();
+//run();
 
 function displayPictures(data) {
   console.log(data)
@@ -174,7 +170,14 @@ function displayPictures(data) {
 }
 
 // console.log(getPictureOfTheDay());
+const run = async () => {
+  const data = await fetch(`${BASE_URL}?${API_KEY}&start_date=2020-03-10&end_date=2022-08-30`);
+  const response = await data.json();
+  console.log(response);
+  displayPictures(response);
+}
 
+/*
 fetch('https://api.nasa.gov/planetary/apod?api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDudZRyP5vSH4Nu')
   .then(res => res.json())
   .then(data => console.log(data));
@@ -205,4 +208,4 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDud
         document.querySelector("#galeria").append(div);
     });
 
-}  
+*/

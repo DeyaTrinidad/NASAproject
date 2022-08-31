@@ -199,12 +199,7 @@ body {
 }
 
 body {
-  height: 400px;
-  background-image: url("https://www.nasa.gov/sites/default/files/star_nova.png");
-  background-size: cover;
-  background-repeat:no-repeat;
-  background-position: center center;
-}
+
 
     color: aliceblue;
     height: 200px;
