@@ -198,6 +198,10 @@ body {
     object-fit: cover;
 }
 
+iframe {
+  max-height: unset;
+}
+
 body {
 
 

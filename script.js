@@ -2,7 +2,7 @@ import {getPictureOfTheDay, getPicture, getData, getPicturesRange, getRandomPict
 
 const BASE_URL = 'https://api.nasa.gov/planetary/apod';
 const API_KEY = 'api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDudZRyP5vSH4Nu';
-/*
+/* Codigo de deyanira
 const Search = {
   template: `<div class="search">
 <h1>NASA Image Archive Search!</h1>
@@ -76,7 +76,8 @@ new Vue({
   },
    template: `<Search/>`
 });
-*/
+// Se cierra código de deyanira
+*/ 
 
 //Script del proyecto pasado Nancy
 //Método Sensei
@@ -106,49 +107,28 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=u8Z3MZ6Hcmm1zGtZYe1h3pZ1aEH9g
 //         return 
 //     })
 // }
-
-// const dibujar = (fichas) => {
-    
-
-//     document.querySelector("#galeria").innerHTML="";
-//     fichas.forEach((ficha) => {
-//         let div = document.createElement("div");
-//         div.classList.add("column", "is-3");
-//         div.innerHTML += `<div class="card">
-//                         <div class="card-image">
-//                             <figure class="image is-4by3">
-//                                 <img src="${personaje.href}" alt="Placeholder image">
-//                             </figure>
-//                         </div>
-//                         <div class="card-content">
-//                             <div class="media">
-//                                 <div class="media-content">
-//                                 <p class="title is-4"><b>${personaje.title}</b></p>
-//                                 </div>
-//                             </div>
-//                         <div class="content">
-//                             <p><b>${personaje.description}<b/></p>
-//                             <a>@Nasa</a>
-//                             <br>
-//                             <time datetime="${personaje.date_created}"></time>
-//                         </div>
-//                         </div>
-//                     </div> `
-//         document.querySelector("#galeria").append(div);
-//     });
-
-// }
-
-
-
-fetch(`${BASE_URL}?${API_KEY}`).then(data => data.json()).then(data => displayPictures(data))
-
+////////////
+/*
+fetch(`${BASE_URL}?${API_KEY}`)
+.then(data => data.json())
+.then(data => displayPictures(data));
+*/
 //run();
-
+//DISPLAY PICTURES DE CARLOS MARCA ERROR EN DATA.FOREACH
+// console.log(getPictureOfTheDay());
+/*
+const run = async () => {
+  const data = await fetch(`${BASE_URL}?${API_KEY}&start_date=2020-03-10&end_date=2022-08-30`);
+  const response = await data.json();
+  console.log(response);
+  displayPictures(response);
+}
+*/
+/*
 function displayPictures(data) {
   console.log(data)
   const fragment = document.createDocumentFragment();
-  data.forEach(pictureData => {
+  data.forEach((pictureData) => {
     console.log(pictureData)
     if (pictureData['media_type'] !== 'image') return;
 
@@ -168,19 +148,54 @@ function displayPictures(data) {
   });
   document.getElementById('galeria').appendChild(fragment);
 }
+*/
+let resultados =[]
+//fetch(`${BASE_URL}?${API_KEY}`)
+fetch(`https://api.nasa.gov/planetary/apod?api_key=u8Z3MZ6Hcmm1zGtZYe1h3pZ1aEH9gfa0qXhBsLol&start_date=2022-08-25&end_date=2022-08-30`)
+.then((response)=>response.json())
+.then((data)=>{
+  resultados = data;
+  displayPictures(resultados);
+})
 
-// console.log(getPictureOfTheDay());
-const run = async () => {
-  const data = await fetch(`${BASE_URL}?${API_KEY}&start_date=2020-03-10&end_date=2022-08-30`);
-  const response = await data.json();
-  console.log(response);
-  displayPictures(response);
-}
+
+const displayPictures = (publicacion) => {
+    console.log(publicacion)
+
+    document.querySelector("#galeria").innerHTML="";
+    
+    publicacion.forEach((pictureData) => {
+      let div = document.createElement("div");
+      div.classList.add("column", "is-3");
+      div.innerHTML += `<div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="${pictureData.url}" alt="Placeholder image">
+                                <iframe src="${pictureData.url}" allow="autoplay;
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                                <div class="media-content">
+                                <p class="title is-4"><b>${pictureData.title}</b></p>
+                                </div>
+                            </div>
+                        <div class="content">
+                            <p><b>${pictureData.explanation}<b/></p>
+                             <a>${pictureData.copyright} @Nasa</a>
+                            <br>
+                           <time datetime="">Captured: ${pictureData.date}</time>
+                        </div>
+                        </div>
+                    </div> `
+      document.querySelector("#galeria").append(div);
+  });
+ }
 
 /*
-fetch('https://api.nasa.gov/planetary/apod?api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDudZRyP5vSH4Nu')
-  .then(res => res.json())
-  .then(data => console.log(data));
+//fetch('https://api.nasa.gov/planetary/apod?api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDudZRyP5vSH4Nu')
+  //.then(res => res.json())
+  //.then(data => console.log(data));
     document.querySelector("#galeria").innerHTML="";
     fichas.forEach((ficha) => {
         let div = document.createElement("div");
@@ -207,5 +222,4 @@ fetch('https://api.nasa.gov/planetary/apod?api_key=t6DwZgp9FbxOvDNJeqXlI8zvZmDud
                     </div> `
         document.querySelector("#galeria").append(div);
     });
-
 */
